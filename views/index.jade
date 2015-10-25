@@ -1,0 +1,21 @@
+extends layout
+
+
+
+block content
+  header
+    h1(class='title')= title
+    h1
+  main
+    label(for="Min")
+    input(type="number" id="min" name="min" value="0")
+    label(for="Max")
+    input(type="number" id="max" name="max" value="100000")
+    button(value="Enter" onclick="ajaxGetNumPrimes()")
+    p(id="num-primes")
+      |the number of primes is:
+
+
+
+
+
