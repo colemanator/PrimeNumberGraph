@@ -58,8 +58,27 @@ function drawChart(graphData,min,max) {
 function ajaxGetNumPrimes() {
 
     //get the user input
-    var min = document.getElementById("min").value;
-    var max = document.getElementById("max").value;
+    var min = parseInt(document.getElementById("min").value);
+    var max = parseInt(document.getElementById("max").value);
+
+    //Make sure input is valid
+    if(isNaN(min) || min < 0){
+        min = 0;
+    }
+    if(isNaN(max) || max < 0){
+        max = 10000;
+        displayError("Please enter a Max value ");
+        return;
+    }
+    if(min > max){
+        min = 0;
+        max = 10000;
+        displayError("min can't be greater then Max");
+    }
+    else{
+        //reset error div to empty aka no display
+        document.getElementById('error').innerHTML = "";
+    }
 
 
     //new xmlhttp object
@@ -82,5 +101,18 @@ function ajaxGetNumPrimes() {
     xmlhttp.send();
 
 }
+
+/*
+ *Display the error message to the user in the error div
+ *
+ * @param this is the error message
+ */
+function displayError(message){
+        document.getElementById('error').innerHTML = message;
+}
+
+
+
+
 
 

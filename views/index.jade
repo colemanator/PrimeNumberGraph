@@ -14,9 +14,10 @@ block content
                 input(type="number" id="max" class="primeInput" name="max" placeholder="Enter the Max")
                 button(value="Enter" onclick="ajaxGetNumPrimes()" class="calculatePrime")
                     |Calculate
-        div(class="row standard")
-            h2(id="primes-text")
-            p(id="num-primes")
+        div(class="row standard last")
+            p(id="error")
+            h3(id="primes-text")
+            div(id="num-primes")
             div( id="linechart_material")
 
 
