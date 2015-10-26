@@ -33,8 +33,8 @@ router.get('/primeNumbers', function(request, res) {
     var max = parseInt(request.query.max);
 
     //Make sure input is valid
-    if(isNaN(min) || min < 0){
-      min = 0;
+    if(isNaN(min) || min <= 1){
+      min = 2;
     }
 
     if(isNaN(max) || max < 0){
@@ -50,6 +50,7 @@ router.get('/primeNumbers', function(request, res) {
     var graphData= {};
     var numPrimes = 0;
     var chunkSize = Math.round((max-min)/100);
+    var square = Math.ceil(Math.sqrt(max));
     var chunk = 0;
     var count = 0;
     var prime;
@@ -59,14 +60,14 @@ router.get('/primeNumbers', function(request, res) {
       chunkSize = 1;
     }
 
-    /* Iterate through and finds prime numbers (change this to use square numbers, more efficient),
-     * Iterates though each chunk and count the number of primes and record the reasults
+    /* Iterate through and finds prime numbers (now using square root, much more efficient)
+     * Iterates though each chunk and count the number of primes and record the results
      */
     for (var i = min; i < max; i++) {
       chunk++;
       prime = true;
-      for (var n = 2; n <= i - 1; n++) {
-        if (i % n == 0) {
+      for (var n = 2; n <= square; n++) {
+        if (i % n == 0 && i != n) {
           prime = false;
         }
       }
@@ -82,6 +83,8 @@ router.get('/primeNumbers', function(request, res) {
 
       }
     }
+    //because chunk is rounded it will miss the last chunk, so store it now
+    graphData[chunk] = numPrimes;
 
   graphDataString = JSON.stringify(graphData);
 
