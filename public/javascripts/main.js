@@ -72,7 +72,7 @@ function ajaxGetNumPrimes() {
             var primeNumbers = xmlhttp.responseText;
             var primeNumbersJSON = JSON.parse(primeNumbers);
 
-            //Call the draw function 
+            //Call the draw function
             drawChart(primeNumbersJSON, min,max);
 
         }
