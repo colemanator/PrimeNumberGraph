@@ -3,17 +3,22 @@ extends layout
 
 
 block content
-  header
-    h1(class='title')= title
-    h1
-  main
-    label(for="Min")
-    input(type="number" id="min" name="min" value="0")
-    label(for="Max")
-    input(type="number" id="max" name="max" value="100000")
-    button(value="Enter" onclick="ajaxGetNumPrimes()")
-    p(id="num-primes")
-      |the number of primes is:
+    header
+        h1(class='title')= title
+    main
+        div(class="row")
+            h2
+                |Enter The range to calculate
+            div(class="primeForm")
+                input(type="number" id="min" class="primeInput" name="min" placeholder="Enter the Min")
+                input(type="number" id="max" class="primeInput" name="max" placeholder="Enter the Max")
+                button(value="Enter" onclick="ajaxGetNumPrimes()" class="calculatePrime")
+                    |Calculate
+        div(class="row standard")
+            p(id="num-primes")
+                |the number of primes is:
+            div( id="linechart_material")
+
 
 
 

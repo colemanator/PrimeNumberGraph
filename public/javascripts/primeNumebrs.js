@@ -13,7 +13,7 @@ function ajaxGetNumPrimes() {
             //get the response text and parse it as JSON
             var primeNumbers = xmlhttp.responseText;
             var primeNumbersJSON = JSON.parse(primeNumbers);
-            document.getElementById('num-primes').innerHTML = primeNumbersJSON.number;
+            document.getElementById('num-primes').innerHTML += primeNumbersJSON.number;
 
         }
     }

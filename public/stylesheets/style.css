@@ -1,8 +1,66 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  color: dimgrey;
 }
 
 a {
   color: #00B7FF;
+}
+
+.title{
+  margin-top: 0px;
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+header{
+  background-color: #EEEEEE;
+  width: 100%;
+  height: 100px;
+  margin: 0px;
+}
+
+.row{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.standard{
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.primeForm{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.primeInput{
+  width: 40%;
+  height: 40px;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 28px;
+}
+
+.calculatePrime{
+  height: 40px;
+  border-radius: 5px;
+  border-style: none;
+  background-image: -webkit-linear-gradient(top,#3399FF,#3369FF);
+  color: white;
+  font-size: 28px;
+  margin-left: 10px;
+
+}
+
+.calculatePrime:hover{
+  background-image: -webkit-linear-gradient(bottom,#3369FF,#3359FF);
+}
+
+h2{
+  margin-left: 10%;
 }
