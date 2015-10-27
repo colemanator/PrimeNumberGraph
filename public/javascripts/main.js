@@ -27,7 +27,9 @@ function drawChart(graphData,min,max) {
         //count the number of primes
         total += parseInt(numberOfPrimes);
 
-        data.addRow([parseInt(number), parseInt(numberOfPrimes)]);
+        if("remainder" != key) {
+            data.addRow([parseInt(number), parseInt(numberOfPrimes)]);
+        }
     }
 
     //table options
