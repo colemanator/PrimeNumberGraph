@@ -69,6 +69,7 @@ router.get('/primeNumbers', function(request, res) {
       for (var n = 2; n <= square; n++) {
         if (i % n == 0 && i != n) {
           prime = false;
+          break;
         }
       }
       count++;
