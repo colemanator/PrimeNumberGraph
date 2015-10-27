@@ -84,7 +84,7 @@ router.get('/primeNumbers', function(request, res) {
 
       }
     }
-    //because chunk is rounded it will miss the last chunk, so store it now
+    //because chunk is rounded it will miss the last few numbers, so store it now as remainder
     graphData["remainder"] = numPrimes;
 
   graphDataString = JSON.stringify(graphData);
