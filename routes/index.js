@@ -41,7 +41,7 @@ router.get('/primeNumbers', function(request, res) {
       max = 10000;
     }
 
-    if(min > max){
+    if(min >= max){
       min = 0;
       max = 10000;
     }
