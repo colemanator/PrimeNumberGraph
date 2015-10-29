@@ -68,14 +68,12 @@ function ajaxGetNumPrimes() {
         min = 0;
     }
     if(isNaN(max) || max < 0){
-        max = 10000;
-        displayError("Please enter a Max value ");
+        displayError("Please enter a valid Max value ");
         return;
     }
     if(min > max){
-        min = 0;
-        max = 10000;
         displayError("min can't be greater then Max");
+        return;
     }
     else{
         //reset error div to empty aka no display
