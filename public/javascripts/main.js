@@ -60,19 +60,23 @@ function drawChart(graphData,min,max) {
 function ajaxGetNumPrimes() {
 
     //get the user input
+    var rawMin = document.getElementById("min").value;
     var min = parseInt(document.getElementById("min").value);
     var max = parseInt(document.getElementById("max").value);
 
     //Make sure input is valid
-    if(isNaN(min) || min < 0){
+    if ( "" == rawMin){
         min = 0;
-    }
-    if(isNaN(max) || max < 0){
-        displayError("Please enter a valid Max value ");
+    }else if(isNaN(min) || min < 0) {
+        displayError("Please enter a valid min value");
         return;
     }
-    if(min > max){
-        displayError("min can't be greater then Max");
+    if(isNaN(max) || max < 0){
+        displayError("Please enter a valid Max value");
+        return;
+    }
+    if(min >= max ){
+        displayError("min can't be greater then or equal to Max");
         return;
     }
     else{
